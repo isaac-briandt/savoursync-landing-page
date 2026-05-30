@@ -1,0 +1,2905 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyncCircle Loyalty Program | SavourSync Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              brand: {
+                dark: "#0f172a",
+                slate: "#334155",
+                gold: "#b45309" /* Warm premium amber-gold */,
+                goldLight: "#fef3c7",
+                accent: "#0284c7",
+                light: "#f8fafc",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .tier-card-active {
+        border-color: #b45309;
+        background-color: #ffffff;
+        box-shadow: 0 10px 25px -5px rgba(180, 83, 9, 0.1);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body class="bg-brand-light font-sans text-brand-slate antialiased">
+    <header
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-2">
+          <span
+            class="font-serif text-2xl font-bold tracking-tight text-brand-dark"
+            >Savour<span class="text-brand-gold">Sync</span></span
+          >
+          <span
+            class="text-[10px] uppercase tracking-widest font-extrabold bg-brand-goldLight text-brand-gold px-2 py-0.5 rounded ml-2"
+            >SyncCircle</span
+          >
+        </div>
+        <nav
+          class="hidden md:flex space-x-8 font-medium text-xs uppercase tracking-wider text-gray-500"
+        >
+          <a href="#journey" class="hover:text-brand-dark transition"
+            >Your Journey</a
+          >
+          <a href="#tiers" class="hover:text-brand-dark transition"
+            >Loyalty Tiers</a
+          >
+          <a href="#events" class="hover:text-brand-dark transition"
+            >Weekly Anchors</a
+          >
+          <a href="#calculator" class="hover:text-brand-dark transition"
+            >Points Simulator</a
+          >
+        </nav>
+        <div>
+          <a
+            href="#signup"
+            class="bg-brand-dark text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-gold transition shadow-sm"
+            >Join Program</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="signup"
+      class="relative bg-white py-12 lg:py-24 border-b border-gray-100 overflow-hidden"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+      >
+        <div class="lg:col-span-7 space-y-6">
+          <span
+            class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"
+          >
+            ✨ Ghana's First Gamified Dining Experience
+          </span>
+          <h1
+            class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight"
+          >
+            Where Every
+            <span class="italic text-brand-gold">Flavour</span> Finds You.
+          </h1>
+          <p
+            class="text-base sm:text-lg text-gray-500 max-w-xl leading-relaxed"
+          >
+            Welcome to
+            <strong class="text-brand-dark font-semibold">SyncCircle</strong>.
+            Turning walk-in visits into rewarding culinary relationships because
+            loyalty begins with being known, remembered, and celebrated.
+          </p>
+
+          <div
+            class="p-5 bg-brand-light border-l-4 border-brand-gold rounded-r-2xl max-w-xl shadow-sm"
+          >
+            <p
+              class="font-bold text-brand-dark text-sm sm:text-base flex items-center gap-2"
+            >
+              🎁 Instant Registration Incentive:
+            </p>
+            <p class="text-xs sm:text-sm text-gray-500 mt-1">
+              Sign up below to receive an immediate **Welcome Dish Voucher**
+              plus **10% off** your secondary milestone visit delivered directly
+              to your device.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <style type="text/css">
+            @import url("https://assets.mlcdn.com/fonts.css?version=1779867");
+          </style>
+          <style type="text/css">
+            /* LOADER */
+            .ml-form-embedSubmitLoad {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+            }
+
+            .sr-only {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              border: 0;
+            }
+
+            .ml-form-embedSubmitLoad:after {
+              content: " ";
+              display: block;
+              width: 11px;
+              height: 11px;
+              margin: 1px;
+              border-radius: 50%;
+              border: 4px solid #fff;
+              border-color: #ffffff #ffffff #ffffff transparent;
+              animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+            }
+            @keyframes ml-form-embedSubmitLoad {
+              0% {
+                transform: rotate(0deg);
+              }
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+            #mlb2-41550563.ml-form-embedContainer {
+              box-sizing: border-box;
+              display: table;
+              margin: 0 auto;
+              position: static;
+              width: 100% !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer h4,
+            #mlb2-41550563.ml-form-embedContainer p,
+            #mlb2-41550563.ml-form-embedContainer span,
+            #mlb2-41550563.ml-form-embedContainer button {
+              text-transform: none !important;
+              letter-spacing: normal !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer .ml-form-embedWrapper {
+              background-color: #84644d;
+
+              border-width: 0px;
+              border-color: transparent;
+              border-radius: 4px;
+              border-style: solid;
+              box-sizing: border-box;
+              display: inline-block !important;
+              margin: 0;
+              padding: 0;
+              position: relative;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper.embedPopup,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper.embedDefault {
+              width: 400px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper.embedForm {
+              max-width: 400px;
+              width: 100%;
+            }
+            #mlb2-41550563.ml-form-embedContainer .ml-form-align-left {
+              text-align: left;
+            }
+            #mlb2-41550563.ml-form-embedContainer .ml-form-align-center {
+              text-align: center;
+            }
+            #mlb2-41550563.ml-form-embedContainer .ml-form-align-default {
+              display: table-cell !important;
+              vertical-align: middle !important;
+              text-align: center !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer .ml-form-align-right {
+              text-align: right;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedHeader
+              img {
+              border-top-left-radius: 4px;
+              border-top-right-radius: 4px;
+              height: auto;
+              margin: 0 auto !important;
+              max-width: 100%;
+              width: 200px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody {
+              padding: 20px 20px 0 20px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody.ml-form-embedBodyHorizontal {
+              padding-bottom: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent {
+              text-align: left;
+              margin: 0 0 20px 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              h4,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              h4 {
+              color: #b06b49;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 45px;
+              font-weight: 700;
+              margin: 0 0 10px 0;
+              text-align: left;
+              word-break: break-word;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              p,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              p {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 20px;
+              margin: 0 0 10px 0;
+              text-align: left;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              ul,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              ol,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              ul,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              ol {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              ol
+              ol,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              ol
+              ol {
+              list-style-type: lower-alpha;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              ol
+              ol
+              ol,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              ol
+              ol
+              ol {
+              list-style-type: lower-roman;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              p
+              a,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              p
+              a {
+              color: #000000;
+              text-decoration: underline;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-block-form
+              .ml-field-group {
+              text-align: left !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-block-form
+              .ml-field-group
+              label {
+              margin-bottom: 5px;
+              color: #333333;
+              font-size: 14px;
+              font-family: "Lato", Arial, Helvetica, sans-serif;
+              font-weight: bold;
+              font-style: normal;
+              text-decoration: none;
+              display: inline-block;
+              line-height: 20px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedContent
+              p:last-child,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-successBody
+              .ml-form-successContent
+              p:last-child {
+              margin: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              form {
+              margin: 0;
+              width: 100%;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-formContent,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow {
+              margin: 0 0 20px 0;
+              width: 100%;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow {
+              float: left;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-formContent.horozintalForm {
+              margin: 0;
+              padding: 0 0 20px 0;
+              width: 100%;
+              height: auto;
+              float: left;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow {
+              margin: 0 0 10px 0;
+              width: 100%;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow.ml-last-item {
+              margin: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow.ml-formfieldHorizintal {
+              margin: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              input {
+              background-color: #ffffff !important;
+              color: #333333 !important;
+              border-color: #cccccc;
+              border-radius: 4px !important;
+              border-style: solid !important;
+              border-width: 1px !important;
+              font-family: "Lato", Arial, Helvetica, sans-serif;
+              font-size: 14px !important;
+              height: auto;
+              line-height: 21px !important;
+              margin-bottom: 0;
+              margin-top: 0;
+              margin-left: 0;
+              margin-right: 0;
+              padding: 10px 10px !important;
+              width: 100% !important;
+              box-sizing: border-box !important;
+              max-width: 100% !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              input::-webkit-input-placeholder,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              input::-webkit-input-placeholder {
+              color: #333333;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              input::-moz-placeholder,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              input::-moz-placeholder {
+              color: #333333;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              input:-ms-input-placeholder,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              input:-ms-input-placeholder {
+              color: #333333;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              input:-moz-placeholder,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              input:-moz-placeholder {
+              color: #333333;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              textarea,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              textarea {
+              background-color: #ffffff !important;
+              color: #333333 !important;
+              border-color: #cccccc;
+              border-radius: 4px !important;
+              border-style: solid !important;
+              border-width: 1px !important;
+              font-family: "Lato", Arial, Helvetica, sans-serif;
+              font-size: 14px !important;
+              height: auto;
+              line-height: 21px !important;
+              margin-bottom: 0;
+              margin-top: 0;
+              padding: 10px 10px !important;
+              width: 100% !important;
+              box-sizing: border-box !important;
+              max-width: 100% !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-radio
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::before {
+              border-color: #cccccc !important;
+              background-color: #ffffff !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              input.custom-control-input[type="checkbox"] {
+              box-sizing: border-box;
+              padding: 0;
+              position: absolute;
+              z-index: -1;
+              opacity: 0;
+              margin-top: 5px;
+              margin-left: -1.5rem;
+              overflow: visible;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::before {
+              border-radius: 4px !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              input[type="checkbox"]:checked
+              ~ .label-description::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              input[type="checkbox"]:checked
+              ~ .label-description::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-input:checked
+              ~ .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-input:checked
+              ~ .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              input[type="checkbox"]:checked
+              ~ .label-description::after {
+              background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-input:checked
+              ~ .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-input:checked
+              ~ .custom-control-label::after {
+              background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-input:checked
+              ~ .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-radio
+              .custom-control-input:checked
+              ~ .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-input:checked
+              ~ .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-input:checked
+              ~ .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              input[type="checkbox"]:checked
+              ~ .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              input[type="checkbox"]:checked
+              ~ .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              input[type="checkbox"]:checked
+              ~ .label-description::before {
+              border-color: #000000 !important;
+              background-color: #000000 !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-radio
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-radio
+              .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-label::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-label::after {
+              top: 2px;
+              box-sizing: border-box;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::after {
+              top: 0px !important;
+              box-sizing: border-box !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::after {
+              top: 0px !important;
+              box-sizing: border-box !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              .label-description::after {
+              top: 0px !important;
+              box-sizing: border-box !important;
+              position: absolute;
+              left: -1.5rem;
+              display: block;
+              width: 1rem;
+              height: 1rem;
+              content: "";
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              .label-description::before {
+              top: 0px !important;
+              box-sizing: border-box !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .custom-control-label::before {
+              position: absolute;
+              top: 4px;
+              left: -1.5rem;
+              display: block;
+              width: 16px;
+              height: 16px;
+              pointer-events: none;
+              content: "";
+              background-color: #ffffff;
+              border: #adb5bd solid 1px;
+              border-radius: 50%;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .custom-control-label::after {
+              position: absolute;
+              top: 2px !important;
+              left: -1.5rem;
+              display: block;
+              width: 1rem;
+              height: 1rem;
+              content: "";
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              .label-description::before,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::before {
+              position: absolute;
+              top: 4px;
+              left: -1.5rem;
+              display: block;
+              width: 16px;
+              height: 16px;
+              pointer-events: none;
+              content: "";
+              background-color: #ffffff;
+              border: #adb5bd solid 1px;
+              border-radius: 50%;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::after {
+              position: absolute;
+              top: 0px !important;
+              left: -1.5rem;
+              display: block;
+              width: 1rem;
+              height: 1rem;
+              content: "";
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::after {
+              position: absolute;
+              top: 0px !important;
+              left: -1.5rem;
+              display: block;
+              width: 1rem;
+              height: 1rem;
+              content: "";
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .custom-radio
+              .custom-control-label::after {
+              background: no-repeat 50%/50% 50%;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .custom-checkbox
+              .custom-control-label::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-interestGroupsRow
+              .ml-form-interestGroupsRowCheckbox
+              .label-description::after,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description::after {
+              background: no-repeat 50%/50% 50%;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-control,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-control {
+              position: relative;
+              display: block;
+              min-height: 1.5rem;
+              padding-left: 1.5rem;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-input,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-radio
+              .custom-control-input,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-input,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-input {
+              position: absolute;
+              z-index: -1;
+              opacity: 0;
+              box-sizing: border-box;
+              padding: 0;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-radio
+              .custom-control-label,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-radio
+              .custom-control-label,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-checkbox
+              .custom-control-label,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-checkbox
+              .custom-control-label {
+              color: #000000;
+              font-size: 12px !important;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              line-height: 22px;
+              margin-bottom: 0;
+              position: relative;
+              vertical-align: top;
+              font-style: normal;
+              font-weight: 700;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-fieldRow
+              .custom-select,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              .custom-select {
+              background-color: #ffffff !important;
+              color: #333333 !important;
+              border-color: #cccccc;
+              border-radius: 4px !important;
+              border-style: solid !important;
+              border-width: 1px !important;
+              font-family: "Lato", Arial, Helvetica, sans-serif;
+              font-size: 14px !important;
+              line-height: 20px !important;
+              margin-bottom: 0;
+              margin-top: 0;
+              padding: 10px 28px 10px 12px !important;
+              width: 100% !important;
+              box-sizing: border-box !important;
+              max-width: 100% !important;
+              height: auto;
+              display: inline-block;
+              vertical-align: middle;
+              background: url("https://assets.mlcdn.com/ml/images/default/dropdown.svg")
+                no-repeat right 0.75rem center/8px 10px;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow {
+              height: auto;
+              width: 100%;
+              float: left;
+            }
+            .ml-form-formContent.horozintalForm
+              .ml-form-horizontalRow
+              .ml-input-horizontal {
+              width: 70%;
+              float: left;
+            }
+            .ml-form-formContent.horozintalForm
+              .ml-form-horizontalRow
+              .ml-button-horizontal {
+              width: 30%;
+              float: left;
+            }
+            .ml-form-formContent.horozintalForm
+              .ml-form-horizontalRow
+              .ml-button-horizontal.labelsOn {
+              padding-top: 25px;
+            }
+            .ml-form-formContent.horozintalForm
+              .ml-form-horizontalRow
+              .horizontal-fields {
+              box-sizing: border-box;
+              float: left;
+              padding-right: 10px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              input {
+              background-color: #ffffff;
+              color: #333333;
+              border-color: #cccccc;
+              border-radius: 4px;
+              border-style: solid;
+              border-width: 1px;
+              font-family: "Lato", Arial, Helvetica, sans-serif;
+              font-size: 14px;
+              line-height: 20px;
+              margin-bottom: 0;
+              margin-top: 0;
+              padding: 10px 10px;
+              width: 100%;
+              box-sizing: border-box;
+              overflow-y: initial;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              button {
+              background-color: #000000 !important;
+              border-color: #000000;
+              border-style: solid;
+              border-width: 1px;
+              border-radius: 4px;
+              box-shadow: none;
+              color: #ffffff !important;
+              cursor: pointer;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 14px !important;
+              font-weight: 700;
+              line-height: 20px;
+              margin: 0 !important;
+              padding: 10px !important;
+              width: 100%;
+              height: auto;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-horizontalRow
+              button:hover {
+              background-color: #333333 !important;
+              border-color: #333333 !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              input[type="checkbox"] {
+              box-sizing: border-box;
+              padding: 0;
+              position: absolute;
+              z-index: -1;
+              opacity: 0;
+              margin-top: 5px;
+              margin-left: -1.5rem;
+              overflow: visible;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              .label-description {
+              color: #000000;
+              display: block;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 12px;
+              text-align: left;
+              margin-bottom: 0;
+              position: relative;
+              vertical-align: top;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              label {
+              font-weight: normal;
+              margin: 0;
+              padding: 0;
+              position: relative;
+              display: block;
+              min-height: 24px;
+              padding-left: 24px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              label
+              a {
+              color: #000000;
+              text-decoration: underline;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              label
+              p {
+              color: #000000 !important;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+              font-size: 12px !important;
+              font-weight: normal !important;
+              line-height: 18px !important;
+              padding: 0 !important;
+              margin: 0 5px 0 0 !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow
+              label
+              p:last-child {
+              margin: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedSubmit {
+              margin: 0 0 20px 0;
+              float: left;
+              width: 100%;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedSubmit
+              button {
+              background-color: #000000 !important;
+              border: none !important;
+              border-radius: 4px !important;
+              box-shadow: none !important;
+              color: #ffffff !important;
+              cursor: pointer;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+              font-size: 14px !important;
+              font-weight: 700 !important;
+              line-height: 21px !important;
+              height: auto;
+              padding: 10px !important;
+              width: 100% !important;
+              box-sizing: border-box !important;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedSubmit
+              button.loading {
+              display: none;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedSubmit
+              button:hover {
+              background-color: #333333 !important;
+            }
+            .ml-subscribe-close {
+              width: 30px;
+              height: 30px;
+              background: url("https://assets.mlcdn.com/ml/images/default/modal_close.png")
+                no-repeat;
+              background-size: 30px;
+              cursor: pointer;
+              margin-top: -10px;
+              margin-right: -10px;
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+            .ml-error input,
+            .ml-error textarea,
+            .ml-error select {
+              border-color: red !important;
+            }
+
+            .ml-error .custom-checkbox-radio-list {
+              border: 1px solid red !important;
+              border-radius: 4px;
+              padding: 10px;
+            }
+
+            .ml-error .label-description,
+            .ml-error .label-description p,
+            .ml-error .label-description p a,
+            .ml-error label:first-child {
+              color: #ff0000 !important;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow.ml-error
+              .label-description
+              p,
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-checkboxRow.ml-error
+              .label-description
+              p:first-letter {
+              color: #ff0000 !important;
+            }
+            @media only screen and (max-width: 400px) {
+              .ml-form-embedWrapper.embedDefault,
+              .ml-form-embedWrapper.embedPopup {
+                width: 100% !important;
+              }
+              .ml-form-formContent.horozintalForm {
+                float: left !important;
+              }
+              .ml-form-formContent.horozintalForm .ml-form-horizontalRow {
+                height: auto !important;
+                width: 100% !important;
+                float: left !important;
+              }
+              .ml-form-formContent.horozintalForm
+                .ml-form-horizontalRow
+                .ml-input-horizontal {
+                width: 100% !important;
+              }
+              .ml-form-formContent.horozintalForm
+                .ml-form-horizontalRow
+                .ml-input-horizontal
+                > div {
+                padding-right: 0px !important;
+                padding-bottom: 10px;
+              }
+              .ml-form-formContent.horozintalForm .ml-button-horizontal {
+                width: 100% !important;
+              }
+              .ml-form-formContent.horozintalForm
+                .ml-button-horizontal.labelsOn {
+                padding-top: 0px !important;
+              }
+            }
+          </style>
+
+          <style type="text/css">
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions {
+              text-align: left;
+              float: left;
+              width: 100%;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent {
+              margin: 0 0 15px 0;
+              text-align: left;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent.horizontal {
+              margin: 0 0 15px 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent
+              h4 {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 12px;
+              font-weight: 700;
+              line-height: 18px;
+              margin: 0 0 10px 0;
+              word-break: break-word;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent
+              p {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 12px;
+              line-height: 18px;
+              margin: 0 0 10px 0;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent.privacy-policy
+              p {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 12px;
+              line-height: 22px;
+              margin: 0 0 10px 0;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent.privacy-policy
+              p
+              a {
+              color: #000000;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent.privacy-policy
+              p:last-child {
+              margin: 0;
+            }
+
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent
+              p
+              a {
+              color: #000000;
+              text-decoration: underline;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsContent
+              p:last-child {
+              margin: 0 0 15px 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptions {
+              margin: 0;
+              padding: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox {
+              margin: 0 0 10px 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox:last-child {
+              margin: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              label {
+              font-weight: normal;
+              margin: 0;
+              padding: 0;
+              position: relative;
+              display: block;
+              min-height: 24px;
+              padding-left: 24px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .label-description {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 12px;
+              line-height: 18px;
+              text-align: left;
+              margin-bottom: 0;
+              position: relative;
+              vertical-align: top;
+              font-style: normal;
+              font-weight: 700;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              .description {
+              color: #000000;
+              font-family: "Poppins", sans-serif;
+              font-size: 12px;
+              font-style: italic;
+              font-weight: 400;
+              line-height: 18px;
+              margin: 5px 0 0 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedPermissionsOptionsCheckbox
+              input[type="checkbox"] {
+              box-sizing: border-box;
+              padding: 0;
+              position: absolute;
+              z-index: -1;
+              opacity: 0;
+              margin-top: 5px;
+              margin-left: -1.5rem;
+              overflow: visible;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedMailerLite-GDPR {
+              padding-bottom: 20px;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedMailerLite-GDPR
+              p {
+              color: #000000;
+              font-family: "Open Sans", Arial, Helvetica, sans-serif;
+              font-size: 10px;
+              line-height: 14px;
+              margin: 0;
+              padding: 0;
+            }
+            #mlb2-41550563.ml-form-embedContainer
+              .ml-form-embedWrapper
+              .ml-form-embedBody
+              .ml-form-embedPermissions
+              .ml-form-embedMailerLite-GDPR
+              p
+              a {
+              color: #000000;
+              text-decoration: underline;
+            }
+            @media (max-width: 768px) {
+              #mlb2-41550563.ml-form-embedContainer
+                .ml-form-embedWrapper
+                .ml-form-embedBody
+                .ml-form-embedPermissions
+                .ml-form-embedPermissionsContent
+                p {
+                font-size: 12px !important;
+                line-height: 18px !important;
+              }
+              #mlb2-41550563.ml-form-embedContainer
+                .ml-form-embedWrapper
+                .ml-form-embedBody
+                .ml-form-embedPermissions
+                .ml-form-embedMailerLite-GDPR
+                p {
+                font-size: 10px !important;
+                line-height: 14px !important;
+              }
+            }
+          </style>
+
+          <div
+            id="mlb2-41550563"
+            class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41550563"
+          >
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div
+                  class="ml-form-embedBody ml-form-embedBodyDefault row-form"
+                >
+                  <div class="ml-form-embedContent" style="">
+                    <h4></h4>
+                    <p>
+                      Enjoy exclusive rewards, discounts, live events, and
+                      unforgettable dining experience!
+                    </p>
+                  </div>
+
+                  <form
+                    class="ml-block-form"
+                    action="https://assets.mailerlite.com/jsonp/2364650/forms/187982728212251905/subscribe"
+                    data-code=""
+                    method="post"
+                    target="_blank"
+                  >
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-name">
+                          <label>Name</label>
+
+                          <!-- input -->
+                          <input
+                            aria-label="name"
+                            type="text"
+                            class="form-control"
+                            data-inputmask=""
+                            name="fields[name]"
+                            placeholder=""
+                            autocomplete="given-name"
+                          />
+                          <!-- /input -->
+
+                          <!-- textarea -->
+
+                          <!-- /textarea -->
+
+                          <!-- select -->
+
+                          <!-- /select -->
+
+                          <!-- checkboxes -->
+
+                          <!-- /checkboxes -->
+
+                          <!-- radio -->
+
+                          <!-- /radio -->
+
+                          <!-- countries -->
+
+                          <!-- /countries -->
+                        </div>
+                      </div>
+                      <div class="ml-form-fieldRow">
+                        <div
+                          class="ml-field-group ml-field-email ml-validate-email ml-validate-required"
+                        >
+                          <label>Email</label>
+
+                          <!-- input -->
+                          <input
+                            aria-label="email"
+                            aria-required="true"
+                            type="email"
+                            class="form-control"
+                            data-inputmask=""
+                            name="fields[email]"
+                            placeholder=""
+                            autocomplete="email"
+                          />
+                          <!-- /input -->
+
+                          <!-- textarea -->
+
+                          <!-- /textarea -->
+
+                          <!-- select -->
+
+                          <!-- /select -->
+
+                          <!-- checkboxes -->
+
+                          <!-- /checkboxes -->
+
+                          <!-- radio -->
+
+                          <!-- /radio -->
+
+                          <!-- countries -->
+
+                          <!-- /countries -->
+                        </div>
+                      </div>
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-phone">
+                          <label>Phone</label>
+
+                          <!-- input -->
+                          <input
+                            aria-label="phone"
+                            type="text"
+                            class="form-control"
+                            data-inputmask=""
+                            name="fields[phone]"
+                            placeholder=""
+                            autocomplete=""
+                          />
+                          <!-- /input -->
+
+                          <!-- textarea -->
+
+                          <!-- /textarea -->
+
+                          <!-- select -->
+
+                          <!-- /select -->
+
+                          <!-- checkboxes -->
+
+                          <!-- /checkboxes -->
+
+                          <!-- radio -->
+
+                          <!-- /radio -->
+
+                          <!-- countries -->
+
+                          <!-- /countries -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Privacy policy -->
+
+                    <!-- /Privacy policy -->
+
+                    <div class="ml-form-embedPermissions" style="">
+                      <div class="ml-form-embedPermissionsContent default">
+                        <div class="ml-form-embedPermissionsOptions">
+                          <div class="ml-form-embedPermissionsOptionsCheckbox">
+                            <label>
+                              <input
+                                type="checkbox"
+                                name="gdpr[]"
+                                value="Email"
+                                xp-if="gdpr.title"
+                              />
+                              <div class="label-description">Email</div>
+                            </label>
+                            <div class="description" xp-if="gdpr.description">
+                              We will send you occasional emails about
+                              promotions, new products and important updates to
+                              keep you in the loop.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="ml-form-embedMailerLite-GDPR">
+                        <p>
+                          By clicking below to submit this form, you acknowledge
+                          that the information you provide will be processed in
+                          accordance with our Privacy Policy.
+                        </p>
+                      </div>
+                    </div>
+
+                    <input type="hidden" name="ml-submit" value="1" />
+
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">Join Now</button>
+
+                      <button
+                        disabled="disabled"
+                        style="display: none"
+                        type="button"
+                        class="loading"
+                      >
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+
+                    <input type="hidden" name="anticsrf" value="true" />
+                  </form>
+                </div>
+
+                <div
+                  class="ml-form-successBody row-success"
+                  style="display: none"
+                >
+                  <div class="ml-form-successContent">
+                    <h4>Thank you!</h4>
+                    <p>
+                      Welcome to SyncCircle. You're officially part of the
+                      SavourSync experience. Get ready for exclusive rewards,
+                      unforgettable dining moments, and special member only
+                      offers. We can't wait to serve you
+                    </p>
+                    <p><br /></p>
+                    <p>
+                      <strong
+                        ><span style="color: rgb(17, 22, 24)"
+                          >Serving Satisfaction In Every Sync..</span
+                        ></strong
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_41550563() {
+              var $ = ml_jQuery || jQuery;
+              $(".ml-subscribe-form-41550563 .row-success").show();
+              $(".ml-subscribe-form-41550563 .row-form").hide();
+            }
+          </script>
+
+          <script
+            src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b"
+            type="text/javascript"
+          ></script>
+          <script>
+            fetch(
+              "https://assets.mailerlite.com/jsonp/2364650/forms/187982728212251905/takel",
+            );
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="py-16 bg-white border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-serif text-3xl font-bold text-brand-dark">
+            Your Lifecycle Experience Timeline
+          </h2>
+          <p
+            class="text-xs text-gray-400 uppercase tracking-widest font-semibold mt-1"
+          >
+            From Walk-In Guest To Curated Inner Circle
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 relative"
+        >
+          <div
+            class="bg-brand-light p-4 rounded-xl border border-gray-100 space-y-2 relative"
+          >
+            <span
+              class="text-[10px] font-extrabold uppercase text-gray-400 block"
+              >Phase 1</span
+            >
+            <h5 class="text-xs font-bold text-brand-dark">1. Discovery</h5>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              Staff prompting at table or till. QR checkpoint scan activates
+              onboarding flow.
+            </p>
+          </div>
+          <div
+            class="bg-brand-light p-4 rounded-xl border border-gray-100 space-y-2"
+          >
+            <span
+              class="text-[10px] font-extrabold uppercase text-gray-400 block"
+              >Phase 2</span
+            >
+            <h5 class="text-xs font-bold text-brand-dark">2. Enrolment</h5>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              WhatsApp greeting arrives within 2 mins with immediate Welcome
+              Voucher entry.
+            </p>
+          </div>
+          <div
+            class="bg-brand-light p-4 rounded-xl border border-gray-100 space-y-2"
+          >
+            <span
+              class="text-[10px] font-extrabold uppercase text-gray-400 block"
+              >Phase 3</span
+            >
+            <h5 class="text-xs font-bold text-brand-dark">
+              3. Second Visit Pull
+            </h5>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              Day 3 automated system email tracking points balance, voucher
+              deadlines, and upcoming anchors.
+            </p>
+          </div>
+          <div
+            class="bg-brand-light p-4 rounded-xl border border-gray-100 space-y-2"
+          >
+            <span
+              class="text-[10px] font-extrabold uppercase text-gray-400 block"
+              >Phase 4</span
+            >
+            <h5 class="text-xs font-bold text-brand-dark">4. Regular Status</h5>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              5-visit tier badge issued via WhatsApp. Free dessert + Sunday
+              Double Points engine unlocked.
+            </p>
+          </div>
+          <div
+            class="bg-brand-light p-4 rounded-xl border border-gray-100 space-y-2"
+          >
+            <span
+              class="text-[10px] font-extrabold uppercase text-gray-400 block"
+              >Phase 5</span
+            >
+            <h5 class="text-xs font-bold text-brand-dark">5. Insider Tier</h5>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              12-visit threshold brings monthly surprise rewards and premium
+              Karaoke booth reservations.
+            </p>
+          </div>
+          <div
+            class="bg-brand-light p-4 rounded-xl border border-gray-100 space-y-2"
+          >
+            <span
+              class="text-[10px] font-extrabold uppercase text-gray-400 block"
+              >Phase 6</span
+            >
+            <h5 class="text-xs font-bold text-brand-dark">6. SyncCircle VIP</h5>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              25-visit milestone. Physical VIP token issued in-store alongside
+              Secret Menu access keys.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tiers" class="py-16 bg-brand-light border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-serif text-3xl font-bold text-brand-dark">
+            The SyncCircle Tiers
+          </h2>
+          <p class="text-sm text-gray-400 mt-1">
+            Tap a module below to preview unique culinary privileges and dynamic
+            menu unlocks.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div
+            onclick="switchTier('newcomer')"
+            id="tab-newcomer"
+            class="tier-card-active border border-gray-200 p-4 rounded-xl cursor-pointer transition text-center bg-white"
+          >
+            <span
+              class="block text-[10px] font-extrabold uppercase tracking-widest text-gray-400"
+              >Tier 01</span
+            >
+            <span
+              class="block font-serif text-lg font-bold text-brand-dark mt-1"
+              >Newcomer</span
+            >
+            <span
+              class="inline-block mt-2 text-[10px] uppercase font-bold bg-slate-100 text-brand-slate px-2.5 py-0.5 rounded-full"
+              >Sign-Up Baseline</span
+            >
+          </div>
+          <div
+            onclick="switchTier('regular')"
+            id="tab-regular"
+            class="border border-gray-200/60 p-4 rounded-xl cursor-pointer transition text-center bg-white/50 hover:bg-white"
+          >
+            <span
+              class="block text-[10px] font-extrabold uppercase tracking-widest text-gray-400"
+              >Tier 02</span
+            >
+            <span
+              class="block font-serif text-lg font-bold text-brand-dark mt-1"
+              >Regular</span
+            >
+            <span
+              class="inline-block mt-2 text-[10px] uppercase font-bold bg-slate-100 text-brand-slate px-2.5 py-0.5 rounded-full"
+              >5 Visits</span
+            >
+          </div>
+          <div
+            onclick="switchTier('insider')"
+            id="tab-insider"
+            class="border border-gray-200/60 p-4 rounded-xl cursor-pointer transition text-center bg-white/50 hover:bg-white"
+          >
+            <span
+              class="block text-[10px] font-extrabold uppercase tracking-widest text-gray-400"
+              >Tier 03</span
+            >
+            <span
+              class="block font-serif text-lg font-bold text-brand-dark mt-1"
+              >Insider</span
+            >
+            <span
+              class="inline-block mt-2 text-[10px] uppercase font-bold bg-slate-100 text-brand-slate px-2.5 py-0.5 rounded-full"
+              >12 Visits</span
+            >
+          </div>
+          <div
+            onclick="switchTier('vip')"
+            id="tab-vip"
+            class="border border-gray-200/60 p-4 rounded-xl cursor-pointer transition text-center bg-white/50 hover:bg-white"
+          >
+            <span
+              class="block text-[10px] font-extrabold uppercase tracking-widest text-gray-400"
+              >Tier 04</span
+            >
+            <span
+              class="block font-serif text-lg font-bold text-brand-dark mt-1"
+              >SyncCircle VIP</span
+            >
+            <span
+              class="inline-block mt-2 text-[10px] uppercase font-extrabold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full"
+              >25 Visits</span
+            >
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div
+            class="lg:col-span-8 bg-white border border-gray-200/80 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between"
+          >
+            <div id="tier-content-display" class="space-y-4">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-100 pb-4 gap-2"
+              >
+                <h4
+                  class="text-xl font-bold text-brand-dark flex items-center gap-2"
+                >
+                  <span>🌱</span> Newcomer Privileges
+                </h4>
+                <span
+                  class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest bg-brand-light px-3 py-1 rounded-md border border-gray-100"
+                  >Goal: Drive the second visit</span
+                >
+              </div>
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-xs text-gray-600"
+              >
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-gold font-bold">✔</span> Immediate
+                  generation of an executive Welcome Dish voucher.
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-gold font-bold">✔</span> Flat 10%
+                  discount framework automatically paired with your secondary
+                  visit profile.
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-gold font-bold">✔</span> Entry-level
+                  permissions granted for programmatic weekly experience
+                  scheduling.
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-gold font-bold">✔</span> Native
+                  tracking logs pushed live directly via curated WhatsApp client
+                  dashboards.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between bg-slate-50 -mx-6 -mb-6 p-6 rounded-b-2xl"
+            >
+              <div class="space-y-1">
+                <span
+                  class="text-[9px] font-extrabold tracking-widest uppercase bg-slate-200 px-2 py-0.5 rounded text-slate-700"
+                  >Monthly Statement</span
+                >
+                <h5 class="text-xs font-bold text-brand-dark">
+                  Integrated 'Chop Report' Framework
+                </h5>
+                <p class="text-[11px] text-gray-400">
+                  Receive personalized point summaries, tier analytics, and
+                  milestone velocity tracking monthly.
+                </p>
+              </div>
+              <span class="text-xl">📊</span>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-4 bg-slate-900 text-white rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden shadow-xl"
+          >
+            <div
+              class="absolute -right-12 -top-12 w-32 h-32 bg-brand-gold/10 rounded-full blur-xl"
+            ></div>
+
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4
+                  class="font-serif text-lg font-bold tracking-tight text-white"
+                >
+                  Secret Menu Unlocks
+                </h4>
+                <span
+                  id="locker-badge"
+                  class="text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30"
+                  >Locked</span
+                >
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">
+                High-tier alignment unlocks unlisted secret culinary creations
+                engineered exclusively for our inner circle.
+              </p>
+
+              <div
+                id="locker-visual-container"
+                class="space-y-2.5 pt-2 opacity-40 select-none pointer-events-none transition duration-300"
+              >
+                <div
+                  class="p-2.5 bg-slate-800/80 rounded-xl border border-slate-700 flex items-center justify-between"
+                >
+                  <div>
+                    <span class="block text-xs font-bold text-amber-400"
+                      >Spiced Infused Goat Chop</span
+                    >
+                    <span class="block text-[10px] text-slate-400"
+                      >Traditional infusion twist</span
+                    >
+                  </div>
+                  <span class="text-xs font-mono text-slate-500">🔒</span>
+                </div>
+                <div
+                  class="p-2.5 bg-slate-800/80 rounded-xl border border-slate-700 flex items-center justify-between"
+                >
+                  <div>
+                    <span class="block text-xs font-bold text-amber-400"
+                      >Takoradi Gold Coast Prawns</span
+                    >
+                    <span class="block text-[10px] text-slate-400"
+                      >Premium continental fusion</span
+                    >
+                  </div>
+                  <span class="text-xs font-mono text-slate-500">🔒</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="locker-footer-text"
+              class="text-[10px] text-slate-400 pt-4 border-t border-slate-800 mt-6"
+            >
+              🔒 Reach
+              <span class="font-bold text-white">Insider Tier (12 Visits)</span>
+              or higher to unlock these items in real-time.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="py-16 bg-white border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-serif text-3xl font-bold text-brand-dark">
+            Three Weekly Anchors. Four Ways to Earn.
+          </h2>
+          <p
+            class="text-xs text-gray-400 uppercase tracking-widest font-semibold mt-1"
+          >
+            Driving intentional cultural activation across every key demographic
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-brand-light rounded-2xl border border-gray-200/60 shadow-sm flex flex-col justify-between overflow-hidden hover:border-gray-300 transition"
+          >
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-[10px] font-extrabold text-brand-accent uppercase bg-sky-50 px-2.5 py-1 rounded-md"
+                  >Every Thursday Night</span
+                >
+                <span
+                  class="text-xs font-extrabold text-brand-gold tracking-tight"
+                  >🎤 12 PTS</span
+                >
+              </div>
+              <h3 class="font-serif text-xl font-bold text-brand-dark">
+                After-Work Karaoke
+              </h3>
+              <div class="text-[11px] space-y-2 text-gray-500">
+                <p>
+                  <strong>Target Segment:</strong> Urban professionals,
+                  corporate friend groups (Ages 25-38).
+                </p>
+                <p>
+                  <strong>Strategic Value:</strong> Captures the unofficial
+                  start of Ghana's social weekend. Highly interactive,
+                  shareable, and builds deep digital social proof.
+                </p>
+                <p>
+                  <strong>Digital Touchpoints:</strong> Wednesday IG teaser,
+                  Thursday AM WhatsApp alert framework, plus automated UGC video
+                  check-in bonus features (+5 pts).
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200/50 bg-slate-50">
+              <p
+                class="text-[10px] text-brand-dark leading-relaxed font-medium"
+              >
+                <span class="font-bold text-brand-gold uppercase"
+                  >Mechanic:</span
+                >
+                12 pts/visit base. Maintain a 3-week attendance streak to earn a
+                free drink token. Insiders gain priority booth booking rights.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-brand-light rounded-2xl border border-gray-200/60 shadow-sm flex flex-col justify-between overflow-hidden hover:border-gray-300 transition"
+          >
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-[10px] font-extrabold text-emerald-700 uppercase bg-emerald-50 px-2.5 py-1 rounded-md"
+                  >Every Saturday Peak</span
+                >
+                <span
+                  class="text-xs font-extrabold text-brand-gold tracking-tight"
+                  >🧸 12+ PTS</span
+                >
+              </div>
+              <h3 class="font-serif text-xl font-bold text-brand-dark">
+                The Kids Corner
+              </h3>
+              <div class="text-[11px] space-y-2 text-gray-500">
+                <p>
+                  <strong>Target Segment:</strong> Young families and parents
+                  with children (Ages 28-42).
+                </p>
+                <p>
+                  <strong>Strategic Value:</strong> Family dining options remain
+                  deeply underserved in Accra and Takoradi. This serves as
+                  SavourSync’s strongest structural differentiator.
+                </p>
+                <p>
+                  <strong>Digital Touchpoints:</strong> Saturday Facebook &
+                  Instagram family narratives, integrated WhatsApp 'FAMILY'
+                  fast-booking flow structures.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200/50 bg-slate-50">
+              <p
+                class="text-[10px] text-brand-dark leading-relaxed font-medium"
+              >
+                <span class="font-bold text-brand-gold uppercase"
+                  >Mechanic:</span
+                >
+                12 pts base + 5 pts multiplier per child in attendance. Streak
+                incentive: 3 Saturdays triggers a 'Kids Eat Free' voucher
+                reward.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-brand-light rounded-2xl border border-gray-200/60 shadow-sm flex flex-col justify-between overflow-hidden hover:border-gray-300 transition"
+          >
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-[10px] font-extrabold text-amber-800 uppercase bg-amber-50 px-2.5 py-1 rounded-md"
+                  >Every Sunday Continuous</span
+                >
+                <span
+                  class="text-xs font-extrabold text-brand-gold tracking-tight"
+                  >👑 15 PTS</span
+                >
+              </div>
+              <h3 class="font-serif text-xl font-bold text-brand-dark">
+                Buffet & Live Band
+              </h3>
+              <div class="text-[11px] space-y-2 text-gray-500">
+                <p>
+                  <strong>Target Segment:</strong> Extended family circles,
+                  premium brunch crowds, and weekly ritual diners (Ages 25-50).
+                </p>
+                <p>
+                  <strong>Strategic Value:</strong> The Sunday dining ritual is
+                  the hardest consumer habit to break. Combining an absolute
+                  buffet with live sound yields maximum perceived value.
+                </p>
+                <p>
+                  <strong>Digital Touchpoints:</strong> Friday preview blast
+                  email, Saturday evening teaser Reel, and Sunday morning 8AM
+                  sharp WhatsApp broadcast alerts.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200/50 bg-slate-50">
+              <p
+                class="text-[10px] text-brand-dark leading-relaxed font-medium"
+              >
+                <span class="font-bold text-brand-gold uppercase"
+                  >Mechanic:</span
+                >
+                15 points base (Highest standalone assignment). Regulars+ gain
+                priority tables; VIPs unlock standing baseline reservations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="calculator"
+      class="py-16 bg-brand-light border-b border-gray-100"
+    >
+      <div class="max-w-4xl mx-auto px-4">
+        <div
+          class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-100"
+        >
+          <div class="text-center max-w-xl mx-auto mb-8">
+            <span
+              class="text-[9px] font-extrabold tracking-widest uppercase bg-brand-goldLight text-brand-gold px-2.5 py-1 rounded"
+              >Interactive Feature</span
+            >
+            <h2
+              class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark mt-2"
+            >
+              Simulate Your Tier Velocity
+            </h2>
+            <p class="text-xs text-gray-400 mt-1">
+              Select your typical activities below to watch your SyncCircle
+              points profile compound in real-time.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-3.5">
+              <h4
+                class="text-xs font-extrabold uppercase tracking-wider text-brand-dark mb-2"
+              >
+                Choose Dining Activities
+              </h4>
+
+              <label
+                class="flex items-center gap-3 p-3 bg-brand-light rounded-xl border border-gray-200 cursor-pointer select-none hover:bg-slate-50 transition"
+              >
+                <input
+                  type="checkbox"
+                  id="calc-visit"
+                  checked
+                  class="w-4 h-4 accent-brand-gold rounded"
+                  onchange="calculatePoints()"
+                />
+                <div class="text-xs">
+                  <span class="block font-bold text-brand-dark"
+                    >Standard Dine-In Visit (+10 Pts)</span
+                  >
+                </div>
+              </label>
+
+              <label
+                class="flex items-center gap-3 p-3 bg-brand-light rounded-xl border border-gray-200 cursor-pointer select-none hover:bg-slate-50 transition"
+              >
+                <input
+                  type="checkbox"
+                  id="calc-weekend"
+                  class="w-4 h-4 accent-brand-gold rounded"
+                  onchange="calculatePoints()"
+                />
+                <div class="text-xs">
+                  <span class="block font-bold text-brand-dark"
+                    >Weekend Advance Booking (+20 Pts total)</span
+                  >
+                </div>
+              </label>
+
+              <label
+                class="flex items-center gap-3 p-3 bg-brand-light rounded-xl border border-gray-200 cursor-pointer select-none hover:bg-slate-50 transition"
+              >
+                <input
+                  type="checkbox"
+                  id="calc-karaoke"
+                  class="w-4 h-4 accent-brand-gold rounded"
+                  onchange="calculatePoints()"
+                />
+                <div class="text-xs">
+                  <span class="block font-bold text-brand-dark"
+                    >Thursday Karaoke Event Night (+12 Pts)</span
+                  >
+                </div>
+              </label>
+
+              <label
+                class="flex items-center gap-3 p-3 bg-brand-light rounded-xl border border-gray-200 cursor-pointer select-none hover:bg-slate-50 transition"
+              >
+                <input
+                  type="checkbox"
+                  id="calc-group"
+                  class="w-4 h-4 accent-brand-gold rounded"
+                  onchange="calculatePoints()"
+                />
+                <div class="text-xs">
+                  <span class="block font-bold text-brand-dark"
+                    >Bring Group of 4+ Guests (+20% Compounding Bonus)</span
+                  >
+                </div>
+              </label>
+
+              <label
+                class="flex items-center gap-3 p-3 bg-brand-light rounded-xl border border-gray-200 cursor-pointer select-none hover:bg-slate-50 transition"
+              >
+                <input
+                  type="checkbox"
+                  id="calc-birthday"
+                  class="w-4 h-4 accent-brand-gold rounded"
+                  onchange="calculatePoints()"
+                />
+                <div class="text-xs">
+                  <span class="block font-bold text-brand-dark"
+                    >Dine During Your Birthday Month (2X Absolute Double)</span
+                  >
+                </div>
+              </label>
+            </div>
+
+            <div
+              class="bg-slate-950 text-white rounded-2xl p-6 text-center space-y-6 flex flex-col justify-between self-stretch"
+            >
+              <div class="space-y-1">
+                <span
+                  class="text-[10px] font-extrabold tracking-widest text-slate-500 uppercase"
+                  >Estimated Balance</span
+                >
+                <div
+                  class="font-mono text-5xl font-black text-amber-400 tracking-tight"
+                  id="calc-display-points"
+                >
+                  10
+                </div>
+                <span class="text-xs text-slate-400 block"
+                  >Accumulated Relationship Points</span
+                >
+              </div>
+
+              <div class="space-y-2">
+                <div
+                  class="flex justify-between text-[11px] font-medium text-slate-400"
+                >
+                  <span
+                    >Current Status:
+                    <strong class="text-white" id="calc-display-tier"
+                      >Newcomer</strong
+                    ></span
+                  >
+                  <span id="calc-display-next">Progress to Regular</span>
+                </div>
+                <div
+                  class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden"
+                >
+                  <div
+                    id="calc-progress-bar"
+                    class="bg-amber-500 h-full transition-all duration-300"
+                    style="width: 10%"
+                  ></div>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-slate-500 leading-normal italic">
+                *Multipliers and conditional logic loops combine adaptively
+                based on real transactional triggers verified at our physical
+                POS terminals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="points-matrix" class="py-16 bg-white border-b border-gray-200">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-3xl font-bold text-brand-dark">
+            The Complete Loyalty Ledger Matrix
+          </h2>
+          <p
+            class="text-xs text-gray-400 uppercase tracking-widest font-semibold mt-1"
+          >
+            Transparent structural rules powering tier escalation
+          </p>
+        </div>
+
+        <div
+          class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white"
+        >
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr
+                  class="bg-brand-dark text-white text-[10px] uppercase tracking-widest font-bold"
+                >
+                  <th class="p-4 sm:p-5">Qualifying Operational Activity</th>
+                  <th class="p-4 sm:p-5 text-right">Points Value</th>
+                  <th class="p-4 sm:p-5 hidden sm:table-cell">
+                    Strategic Rules & System Enhancements
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 text-xs text-brand-slate">
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Standard Dine-in Visit
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-emerald-600">
+                    10 PTS
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Credited automatically upon cross-branch checkpoint check-in
+                    logs.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Weekend Reservation (Fri-Sun)
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-emerald-600">
+                    15 PTS
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Earns an incremental **+5 PTS** bonus optimization if logged
+                    48hrs+ in advance.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Thursday Karaoke Attendance
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-emerald-600">
+                    12 PTS
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Includes streak tracking: 3 consecutive weeks unlocks a
+                    fluid drink voucher.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Saturday Kids Corner Family Visit
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-emerald-600">
+                    12 PTS+
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Calculates 12 base units + an adaptive **+5 PTS per child**
+                    inside the group.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Sunday Buffet & Live Band
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-emerald-600">
+                    15 PTS
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Our highest assigned standalone base value to incentivize
+                    routine Sunday habits.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Viral Link Referral Milestone
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-emerald-600">
+                    25 PTS
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Disbursed automatically when a unique new record registers
+                    via your custom referral link.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Group Booking Modifier (4+ Guests)
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-amber-700">
+                    +20% BONUS
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    Applies a flat 20% compounding bonus modifier across all
+                    points logged that evening.
+                  </td>
+                </tr>
+                <tr class="hover:bg-brand-light/40 transition">
+                  <td class="p-4 font-bold text-brand-dark">
+                    Birthday Month Celebration
+                  </td>
+                  <td class="p-4 text-right font-extrabold text-amber-700">
+                    2X DOUBLE
+                  </td>
+                  <td class="p-4 text-gray-400 hidden sm:table-cell">
+                    The pipeline processes absolute double points rewards across
+                    your entire birth month.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-brand-dark text-white py-16 sm:py-24 text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px] opacity-20"
+      ></div>
+      <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-6">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
+          Don't Just Dine. Be Known.
+        </h2>
+        <p
+          class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed"
+        >
+          Step away from cold, purely transactional restaurant dynamics. Become
+          a recognized pillar of our expanding culinary collective across Ghana
+          today.
+        </p>
+        <div class="pt-2">
+          <a
+            href="#signup"
+            class="inline-block bg-brand-gold hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition uppercase text-xs tracking-widest"
+          >
+            level up your plate 🍽️
+          </a>
+        </div>
+        <p class="text-[10px] text-slate-500">
+          Available exclusively for the initial 500 validated profile database
+          records.
+        </p>
+      </div>
+    </section>
+
+    <footer
+      class="flex items-center bg-slate-950 text-slate-500 text-xs py-10 border-t border-slate-900"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <p class="text-[11px] text-center md:text-left">
+          © 2026 SavourSync Restaurant Group. Accra & Takoradi Multi-Branch
+          Framework.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Structural Tier Database Configuration matching Strategy precisely
+      const tierData = {
+        newcomer: {
+          title: "🌱 Newcomer Privileges",
+          meta: "Goal: Drive the second visit",
+          menuUnlocked: false,
+          bullets: [
+            "Immediate generation of an executive Welcome dish voucher.",
+            "Flat 10% discount framework applied automatically to your next visit.",
+            "Instant accessibility to our centralized weekly programmatic announcement channels.",
+            "Personalized tracking interface activated directly via custom WhatsApp communication links.",
+          ],
+        },
+        regular: {
+          title: "⭐️ Regular Privileges",
+          meta: "Milestone: After 5 Visits",
+          menuUnlocked: false,
+          bullets: [
+            "Automated unlock of our premium Priority weekend booking layout engine.",
+            "A complimentary free dessert voucher generated on your exact 5th visit.",
+            "Automatic Double points engine applied to all purchases completed on Sundays.",
+            "Direct text notifications matching upcoming seasonal chef specials profiles.",
+          ],
+        },
+        insider: {
+          title: "💎 Insider Privileges",
+          meta: "Milestone: After 12 Visits",
+          menuUnlocked: true,
+          bullets: [
+            "Early menu access to sample structural seasonal revisions ahead of public release.",
+            "Complimentary dedicated reservation privileges matching our premium VIP Karaoke booth.",
+            "A static, permanent 15% discount structure automatically hardcoded into your file.",
+            "Disbursement of a highly curated monthly surprise reward token.",
+          ],
+        },
+        vip: {
+          title: "👑 SyncCircle VIP Privileges",
+          meta: "Milestone: After 25 Visits",
+          menuUnlocked: true,
+          bullets: [
+            "A completely complimentary monthly free meal credit matching any premium entrée selection.",
+            "Permanent on-demand unlocking of our premium, unlisted secret menu creations.",
+            "Exclusive, high-priority invitations to our curated invite-only events.",
+            "Presentation of a physical, metallic Founding Member badge during your next check-in.",
+          ],
+        },
+      };
+
+      // Tab Viewport State Swapping Core Engine
+      function switchTier(tierKey) {
+        ["newcomer", "regular", "insider", "vip"].forEach((key) => {
+          const tab = document.getElementById(`tab-${key}`);
+          tab.className =
+            "border border-gray-200/60 p-4 rounded-xl cursor-pointer transition text-center bg-white/50 hover:bg-white";
+        });
+
+        document.getElementById(`tab-${tierKey}`).className =
+          "tier-card-active border border-gray-200 p-4 rounded-xl cursor-pointer transition text-center bg-white";
+
+        const targetData = tierData[tierKey];
+        const contentContainer = document.getElementById(
+          "tier-content-display",
+        );
+
+        // Set prefix visual glyphs
+        let glyph = "🌱";
+        if (tierKey === "regular") glyph = "⭐️";
+        if (tierKey === "insider") glyph = "💎";
+        if (tierKey === "vip") glyph = "👑";
+
+        let htmlPayload = `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-100 pb-4 gap-2">
+                    <h4 class="text-xl font-bold text-brand-dark flex items-center gap-2">
+                        <span>${glyph}</span> ${targetData.title}
+                    </h4>
+                    <span class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest bg-brand-light px-3 py-1 rounded-md border border-gray-100">${targetData.meta}</span>
+                </div>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-xs text-gray-600">
+            `;
+
+        targetData.bullets.forEach((bulletText) => {
+          htmlPayload += `<li class="flex items-start gap-2.5"><span class="text-brand-gold font-bold">✔</span> ${bulletText}</li>`;
+        });
+
+        htmlPayload += `</ul>`;
+        contentContainer.innerHTML = htmlPayload;
+
+        // Update Secret Menu Visual State Engine
+        const visualContainer = document.getElementById(
+          "locker-visual-container",
+        );
+        const badge = document.getElementById("locker-badge");
+        const footerText = document.getElementById("locker-footer-text");
+
+        if (targetData.menuUnlocked) {
+          visualContainer.className =
+            "space-y-2.5 pt-2 opacity-100 transition duration-300";
+          badge.className =
+            "text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+          badge.innerText = "Unlocked";
+          visualContainer.innerHTML = `
+                    <div class="p-2.5 bg-slate-800 rounded-xl border border-amber-500/40 flex items-center justify-between animate-pulse">
+                        <div>
+                            <span class="block text-xs font-bold text-amber-400">Spiced Infused Goat Chop</span>
+                            <span class="block text-[10px] text-slate-300">Authentic local fusion blend</span>
+                        </div>
+                        <span class="text-xs">🌶️ GHS 185</span>
+                    </div>
+                    <div class="p-2.5 bg-slate-800 rounded-xl border border-amber-500/40 flex items-center justify-between">
+                        <div>
+                            <span class="block text-xs font-bold text-amber-400">Takoradi Gold Coast Prawns</span>
+                            <span class="block text-[10px] text-slate-300">Fresh Atlantic luxury presentation</span>
+                        </div>
+                        <span class="text-xs">🍤 GHS 240</span>
+                    </div>
+                `;
+          footerText.innerHTML = `🎉 Your tier status grants you active validation to request these secret iterations from your server.`;
+        } else {
+          visualContainer.className =
+            "space-y-2.5 pt-2 opacity-40 select-none pointer-events-none transition duration-300";
+          badge.className =
+            "text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30";
+          badge.innerText = "Locked";
+          visualContainer.innerHTML = `
+                    <div class="p-2.5 bg-slate-800/80 rounded-xl border border-slate-700 flex items-center justify-between">
+                        <div>
+                            <span class="block text-xs font-bold text-slate-500">Spiced Infused Goat Chop</span>
+                            <span class="block text-[10px] text-slate-600">Traditional infusion twist</span>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500">🔒</span>
+                    </div>
+                    <div class="p-2.5 bg-slate-800/80 rounded-xl border border-slate-700 flex items-center justify-between">
+                        <div>
+                            <span class="block text-xs font-bold text-slate-500">Takoradi Gold Coast Prawns</span>
+                            <span class="block text-[10px] text-slate-600">Premium continental fusion</span>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500">🔒</span>
+                    </div>
+                `;
+          footerText.innerHTML = `🔒 Reach <span class="font-bold text-white">Insider Tier (12 Visits)</span> or higher to unlock these items in real-time.`;
+        }
+      }
+
+      // Gamified Points Logic Simulator Math Matrix Calculations
+      function calculatePoints() {
+        let points = 0;
+
+        if (document.getElementById("calc-visit").checked) points += 10;
+        if (document.getElementById("calc-weekend").checked) points += 20;
+        if (document.getElementById("calc-karaoke").checked) points += 12;
+
+        // Compounding Multiplier Modifiers Applied Sequentially
+        if (document.getElementById("calc-group").checked) {
+          points = Math.round(points * 1.2);
+        }
+        if (document.getElementById("calc-birthday").checked) {
+          points = points * 2;
+        }
+
+        // Update Viewport Elements
+        document.getElementById("calc-display-points").innerText = points;
+
+        // Dynamic Tier Classification Evaluation Loop
+        const tierLabel = document.getElementById("calc-display-tier");
+        const progressNext = document.getElementById("calc-display-next");
+        const progressBar = document.getElementById("calc-progress-bar");
+
+        if (points < 20) {
+          tierLabel.innerText = "Newcomer";
+          tierLabel.className = "text-white font-bold";
+          progressNext.innerText = "Progress to Regular (20 Pts)";
+          let percentage = Math.max((points / 20) * 100, 8);
+          progressBar.style.width = `${percentage}%`;
+          progressBar.className =
+            "bg-amber-500 h-full transition-all duration-300";
+        } else if (points >= 20 && points < 50) {
+          tierLabel.innerText = "Regular";
+          tierLabel.className = "text-sky-400 font-bold";
+          progressNext.innerText = "Progress to Insider (50 Pts)";
+          let percentage = ((points - 20) / 30) * 100;
+          progressBar.style.width = `${Math.max(percentage, 12)}%`;
+          progressBar.className =
+            "bg-sky-400 h-full transition-all duration-300";
+        } else if (points >= 50 && points < 100) {
+          tierLabel.innerText = "Insider";
+          tierLabel.className = "text-indigo-400 font-bold";
+          progressNext.innerText = "Progress to SyncCircle VIP (100 Pts)";
+          let percentage = ((points - 50) / 50) * 100;
+          progressBar.style.width = `${Math.max(percentage, 12)}%`;
+          progressBar.className =
+            "bg-indigo-400 h-full transition-all duration-300";
+        } else {
+          tierLabel.innerText = "SyncCircle VIP 👑";
+          tierLabel.className = "text-amber-400 font-extrabold animate-bounce";
+          progressNext.innerText = "Maximum Tier Achieved!";
+          progressBar.style.width = "100%";
+          progressBar.className =
+            "bg-amber-400 h-full transition-all duration-300";
+        }
+      }
+
+      // Action Conversion Target Handling
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        alert(
+          "Registration validated! Welcome to the SyncCircle. Your complimentary entry voucher is compiling and will drop natively into your WhatsApp pipeline within 120 seconds. 🎉",
+        );
+        document.getElementById("loyaltyForm").reset();
+      }
+    </script>
+  </body>
+</html>
