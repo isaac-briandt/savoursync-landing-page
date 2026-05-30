@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the SyncCircle | SavourSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              brand: {
+                dark: "#0f172a",
+                slate: "#334155",
+                gold: "#b45309",
+                goldLight: "#fef3c7",
+                accent: "#0284c7",
+                light: "#f8fafc",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-brand-light font-sans text-brand-slate antialiased min-h-screen flex flex-col justify-between"
+  >
+    <header class="bg-white border-b border-gray-100">
+      <div
+        class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-2">
+          <span
+            class="font-serif text-2xl font-bold tracking-tight text-brand-dark"
+            >Savour<span class="text-brand-gold">Sync</span></span
+          >
+          <span
+            class="text-[10px] uppercase tracking-widest font-extrabold bg-brand-goldLight text-brand-gold px-2 py-0.5 rounded ml-2"
+            >SyncCircle</span
+          >
+        </div>
+        <div
+          class="text-xs uppercase tracking-wider font-semibold text-gray-400"
+        >
+          Onboarding Verified ✓
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-4">
+      <div class="max-w-2xl w-full text-center space-y-8">
+        <div
+          class="inline-flex items-center justify-center w-20 h-20 bg-amber-50 rounded-full text-brand-gold border border-amber-200/60 shadow-inner relative animate-fade-in"
+        >
+          <span class="text-3xl">🍽️</span>
+          <div
+            class="absolute -bottom-1 -right-1 w-6 h-6 bg-emerald-500 rounded-full border-2 border-white flex items-center justify-center text-[10px] text-white font-bold"
+          >
+            ✓
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <span
+            class="text-[10px] flex flex-col gap-2 font-extrabold uppercase tracking-widest bg-emerald-50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200"
+            ><span>Thank You!</span>You have been registered Successfully</span
+          >
+          <h1
+            class="font-serif text-4xl sm:text-5xl font-bold text-brand-dark tracking-tight"
+          >
+            You're in the <span class="italic text-brand-gold">Circle</span>.
+          </h1>
+          <p class="text-base text-gray-500 max-w-lg mx-auto leading-relaxed">
+            Welcome to a modern dining relationship. Your profile is hardcoded
+            into our ecosystem sequence, initializing your baseline journey
+            metrics.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="bg-white text-slate-400 text-[11px] py-6 border-t border-gray-100 text-center"
+    >
+      <p>
+        © 2026 SavourSync Restaurant Group. Confidential Operations Dashboard.
+        Level Up Your Plate Framework.
+      </p>
+    </footer>
+
+    <script>
+      // Simulated 120-Second Messaging Pipeline Countdown Timer
+      let secondsLeft = 120;
+      const countdownElement = document.getElementById("countdown-timer");
+
+      const countdownInterval = setInterval(() => {
+        secondsLeft--;
+        if (secondsLeft <= 0) {
+          clearInterval(countdownInterval);
+          countdownElement.innerText = "Delivered ✓";
+          countdownElement.className =
+            "font-mono text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded";
+        } else {
+          countdownElement.innerText = `${secondsLeft}s remaining`;
+        }
+      }, 1000);
+
+      // Clipboard Copy Animation Functionality
+      function copyLink() {
+        const copyText = document.getElementById("referral-link");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        navigator.clipboard.writeText(copyText.value);
+
+        const btn = document.getElementById("copy-btn");
+        btn.innerText = "Copied! ✨";
+        btn.className =
+          "bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shrink-0 uppercase tracking-wider";
+
+        setTimeout(() => {
+          btn.innerText = "Copy Link";
+          btn.className =
+            "bg-white hover:bg-amber-100 text-brand-dark text-xs font-bold px-4 py-2.5 rounded-xl transition shrink-0 uppercase tracking-wider";
+        }, 2500);
+      }
+    </script>
+  </body>
+</html>
